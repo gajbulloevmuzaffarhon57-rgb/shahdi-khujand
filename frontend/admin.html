@@ -1,0 +1,396 @@
+<!--
+  Панель управление кафе - admin (22012010) 
+  Автор: Гайбуллоев М.М.
+-->
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f5f0" />
+    <title>Shahdi Khujand — Панель управления</title>
+
+    <link rel="icon" type="image/png" href="images/title/images_admin.jpg" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <a class="brand" href="#overview">
+          <div class="brand-mark">☕</div>
+          <div>
+            <div class="brand-name">ШАХДИ ХУҶАНД</div>
+            <div class="brand-subtitle">Управление кофейней</div>
+          </div>
+        </a>
+
+        <div class="nav-label">Рабочее пространство</div>
+
+        <nav class="nav" aria-label="Навигация">
+          <a class="nav-link active" href="#overview">
+            <span class="nav-icon">▦</span> Обзор
+          </a>
+          <a class="nav-link" href="#bookings">
+            <span class="nav-icon">▣</span> Бронирования
+            <span class="nav-count" id="navBookings">0</span>
+          </a>
+          <a class="nav-link" href="#orders">
+            <span class="nav-icon">🛍</span> Заказы
+            <span class="nav-count" id="navOrders">0</span>
+          </a>
+          <a class="nav-link" href="#reviews">
+            <span class="nav-icon">☆</span> Отзывы
+            <span class="nav-count" id="navReviews">0</span>
+          </a>
+          <a class="nav-link" href="#contacts">
+            <span class="nav-icon">✉</span> Сообщения
+            <span class="nav-count" id="navContacts">0</span>
+          </a>
+        </nav>
+        <!-- Пункт меню для заказа тортов -->
+        <a class="nav-link" href="#cake-orders" data-tab="cake-orders">
+          <span class="nav-icon">🎂</span> Заказы тортов
+          <span class="nav-count" id="cakeOrdersBadge">0</span>
+        </a>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <strong>☕ Shahdi Khujand</strong>
+            <p>Панель для управления заявками и обратной связью клиентов.</p>
+            <a href="/" target="_blank" rel="noopener">Открыть сайт ↗</a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="topbar-title">Панель управления</div>
+            <div class="topbar-subtitle">
+              Рабочее пространство администратора
+            </div>
+          </div>
+          <div class="topbar-right">
+            <span class="date-label" id="today"></span>
+            <div class="avatar" title="Администратор">♙</div>
+          </div>
+        </header>
+
+        <div class="content">
+          <section class="welcome" id="overview">
+            <div>
+              <div class="eyebrow">Shahdi Khujand · Admin</div>
+              <h1>Добро пожаловать!</h1>
+              <p>
+                Следи за бронированиями, заказами и обращениями клиентов в одном
+                месте.
+              </p>
+            </div>
+            <button
+              class="btn btn-primary"
+              id="refreshButton"
+              type="button"
+              onclick="loadData()"
+            >
+              ↻ Обновить данные
+            </button>
+          </section>
+
+          <section class="login-panel" aria-label="Авторизация администратора">
+            <div class="login-heading">
+              <div class="section-icon">🔐</div>
+              <div>
+                <h2>Доступ администратора</h2>
+                <p>Введи токен для подключения к панели управления.</p>
+              </div>
+            </div>
+
+            <form id="loginForm" class="login-row">
+              <input
+                class="field"
+                type="password"
+                id="token"
+                placeholder="Токен администратора"
+                autocomplete="current-password"
+                required
+              />
+              <button class="btn btn-primary" id="loginButton" type="submit">
+                Войти в систему
+              </button>
+              <button class="btn" id="logoutButton" type="button">Выйти</button>
+            </form>
+            <div class="message" id="msg" role="status" aria-live="polite">
+              Введи токен, чтобы загрузить данные.
+            </div>
+          </section>
+
+          <section class="stats" aria-label="Статистика">
+            <div class="stat-card">
+              <div class="stat-top">
+                <div class="stat-label">Бронирования</div>
+                <div class="stat-icon">📅</div>
+              </div>
+              <div class="stat-number" id="sb">—</div>
+              <div class="stat-foot">Всего записей</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-top">
+                <div class="stat-label">Заказы</div>
+                <div class="stat-icon">🛍</div>
+              </div>
+              <div class="stat-number" id="so">—</div>
+              <div class="stat-foot">Всего заказов</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-top">
+                <div class="stat-label">Отзывы</div>
+                <div class="stat-icon">⭐</div>
+              </div>
+              <div class="stat-number" id="sr">—</div>
+              <div class="stat-foot">На проверке и опубликованные</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-top">
+                <div class="stat-label">Сообщения</div>
+                <div class="stat-icon">✉️</div>
+              </div>
+              <div class="stat-number" id="sc">—</div>
+              <div class="stat-foot">Всего обращений</div>
+            </div>
+          </section>
+
+          <section class="section" id="bookings">
+            <div class="section-heading">
+              <div class="section-title">
+                <div class="section-icon">📅</div>
+                <div>
+                  <h2>Бронирования</h2>
+                  <p>Заявки на резервирование столиков</p>
+                </div>
+              </div>
+              <div class="section-tools">
+                <input
+                  class="field"
+                  id="searchBookings"
+                  type="search"
+                  placeholder="Поиск по имени или телефону..."
+                />
+                <select
+                  class="field"
+                  id="filterBookings"
+                  aria-label="Фильтр бронирований"
+                >
+                  <option value="">Все статусы</option>
+                  <option value="new">Новые</option>
+                  <option value="confirmed">Подтверждены</option>
+                  <option value="completed">Завершены</option>
+                  <option value="cancelled">Отменены</option>
+                </select>
+              </div>
+            </div>
+            <div class="item-list" id="bookingsList">
+              <div class="empty">
+                Войди в систему, чтобы загрузить бронирования.
+              </div>
+            </div>
+          </section>
+
+          <section class="section" id="orders">
+            <div class="section-heading">
+              <div class="section-title">
+                <div class="section-icon">🛍</div>
+                <div>
+                  <h2>Заказы</h2>
+                  <p>Управление заказами клиентов</p>
+                </div>
+              </div>
+              <div class="section-tools">
+                <input
+                  class="field"
+                  id="searchOrders"
+                  type="search"
+                  placeholder="Поиск по имени или телефону..."
+                />
+                <select
+                  class="field"
+                  id="filterOrders"
+                  aria-label="Фильтр заказов"
+                >
+                  <option value="">Все статусы</option>
+                  <option value="new">Новые</option>
+                  <option value="confirmed">Приняты</option>
+                  <option value="preparing">Готовятся</option>
+                  <option value="ready">Готовы</option>
+                  <option value="completed">Завершены</option>
+                  <option value="cancelled">Отменены</option>
+                </select>
+              </div>
+            </div>
+            <div class="item-list" id="ordersList">
+              <div class="empty">Войди в систему, чтобы загрузить заказы.</div>
+            </div>
+          </section>
+
+          <section class="section" id="reviews">
+            <div class="section-heading">
+              <div class="section-title">
+                <div class="section-icon">⭐</div>
+                <div>
+                  <h2>Отзывы клиентов</h2>
+                  <p>Проверяй отзывы перед публикацией</p>
+                </div>
+              </div>
+              <div class="section-tools">
+                <input
+                  class="field"
+                  id="searchReviews"
+                  type="search"
+                  placeholder="Поиск по имени или тексту..."
+                />
+                <select
+                  class="field"
+                  id="filterReviews"
+                  aria-label="Фильтр отзывов"
+                >
+                  <option value="">Все статусы</option>
+                  <option value="pending">Ожидают проверки</option>
+                  <option value="approved">Одобрены</option>
+                  <option value="rejected">Отклонены</option>
+                </select>
+              </div>
+            </div>
+            <div class="item-list" id="reviewsList">
+              <div class="empty">Войди в систему, чтобы загрузить отзывы.</div>
+            </div>
+          </section>
+
+          <section class="section" id="contacts">
+            <div class="section-heading">
+              <div class="section-title">
+                <div class="section-icon">✉️</div>
+                <div>
+                  <h2>Сообщения</h2>
+                  <p>Обращения и вопросы клиентов</p>
+                </div>
+              </div>
+              <div class="section-tools">
+                <input
+                  class="field"
+                  id="searchContacts"
+                  type="search"
+                  placeholder="Поиск по имени или сообщению..."
+                />
+                <select
+                  class="field"
+                  id="filterContacts"
+                  aria-label="Фильтр сообщений"
+                >
+                  <option value="">Все статусы</option>
+                  <option value="new">Новые</option>
+                  <option value="read">Прочитаны</option>
+                  <option value="replied">Отвечены</option>
+                  <option value="closed">Закрыты</option>
+                </select>
+              </div>
+            </div>
+            <div class="item-list" id="contactsList">
+              <div class="empty">
+                Войди в систему, чтобы загрузить сообщения.
+              </div>
+            </div>
+          </section>
+
+          <!-- Секция: Заказы тортов -->
+          <section class="section" id="cake-orders">
+            <div class="section-heading">
+              <div class="section-title">
+                <div class="section-icon">🎂</div>
+                <div>
+                  <h2>Заказы тортов</h2>
+                  <p>Заявки на индивидуальные и праздничные торты</p>
+                </div>
+              </div>
+              <div class="section-tools">
+                <input
+                  class="field"
+                  id="searchCakeOrders"
+                  type="search"
+                  placeholder="Поиск по имени или телефону..."
+                />
+                <button
+                  type="button"
+                  class="field"
+                  id="refreshCakesBtn"
+                  style="cursor: pointer; background: #fff"
+                  title="Обновить"
+                >
+                  🔄 Обновить
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="table-container"
+              style="
+                overflow-x: auto;
+                background: #fff;
+                border-radius: 12px;
+                border: 1px solid #e0dcd5;
+                padding: 15px;
+              "
+            >
+              <table
+                class="admin-table"
+                style="width: 100%; border-collapse: collapse"
+              >
+                <thead>
+                  <tr
+                    style="border-bottom: 2px solid #f0ece1; text-align: left"
+                  >
+                    <th style="padding: 10px">Имя</th>
+                    <th style="padding: 10px">Телефон</th>
+                    <th style="padding: 10px">Повод</th>
+                    <th style="padding: 10px">Начинка / Вес</th>
+                    <th style="padding: 10px">Дата</th>
+                    <th style="padding: 10px">Получение</th>
+                    <th style="padding: 10px">Детали / Ссылка</th>
+                  </tr>
+                </thead>
+                <tbody id="cakeOrdersTableBody">
+                  <tr>
+                    <td
+                      colspan="7"
+                      style="text-align: center; color: #888; padding: 20px"
+                    >
+                      Заказов на торты пока нет
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <footer class="footer">
+            Shahdi Khujand · Панель управления · Данные загружаются с сервера
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+    <button
+      type="button"
+      id="adminRefreshBtn"
+      class="admin-refresh-btn"
+      title="Обновить данные"
+    >
+      🔄
+    </button>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

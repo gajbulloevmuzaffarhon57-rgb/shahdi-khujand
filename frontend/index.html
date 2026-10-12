@@ -1,0 +1,2048 @@
+<!--
+  Главный сайт Шахди Хучанд. 
+  Автор: Гайбуллоев М.М.
+-->
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Шахди Хуҷанд — Кофейня</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="images/title/images.jpg" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/backend.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-content">
+        <a href="#" class="logo">
+          ШАХДИ
+          <span>ХУҶАНД</span>
+        </a>
+
+        <nav class="nav">
+          <a href="#home">Главная</a>
+          <a href="#menu">Меню</a>
+          <a href="#about">О нас</a>
+          <a href="#gallery">Галерея</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contact">Контакты</a>
+          <a href="#branches">Филиалы</a>
+          <a href="#orderModal" data-open-order
+            >Заказ <span class="nav-cart-count" id="cartCount">0</span></a
+          >
+        </nav>
+
+        <a href="#bookingModal" class="header-button" data-open-booking>
+          Забронировать столик
+          <svg
+            class="btn-arrow"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+          <div class="hero-content">
+            <span class="hero-subtitle">КОФЕЙНЯ В ХУДЖАНДЕ</span>
+            <h1 class="hero-title">ШАХДИ<br /><span>ХУҶАНД</span></h1>
+            <p class="hero-motto">Кофе. Вкус. Атмосфера.</p>
+            <p class="hero-description">
+              Место, где хороший кофе становится частью хорошего дня.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#menu" class="btn btn-primary">Посмотреть меню ↗</a>
+              <a href="#menu" class="btn btn-secondary">Заказать онлайн</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ВОТ ЭТОТ БЛОК ДОЛЖЕН БЫТЬ ТУТ: -->
+        <div class="hero-footer-bar">
+          <span class="hero-bar-item">Худжанд</span>
+          <span class="bar-dot">•</span>
+          <span class="hero-bar-item">Каждый день</span>
+          <span class="bar-dot">•</span>
+          <span class="hero-bar-item">Свежий кофе</span>
+        </div>
+      </section>
+
+      <!-- MENU CATEGORIES -->
+      <section class="categories section" id="categories">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">ВЫБЕРИТЕ СВОЁ</p>
+              <h2>Маленькие радости дня</h2>
+            </div>
+            <p class="section-description">
+              От первого глотка до последней крошки
+            </p>
+          </div>
+
+          <div class="category-grid">
+            <a href="#menu" class="category-card">
+              <span class="category-icon">☕</span>
+              <h3>Кофе</h3>
+              <p>Эспрессо, латте, капучино</p>
+            </a>
+
+            <a href="#menu" class="category-card">
+              <span class="category-icon">🥐</span>
+              <h3>Выпечка</h3>
+              <p>Свежая выпечка каждый день</p>
+            </a>
+
+            <a href="#menu" class="category-card">
+              <span class="category-icon">🍰</span>
+              <h3>Десерты</h3>
+              <p>Сладкие моменты</p>
+            </a>
+
+            <a href="#menu" class="category-card">
+              <span class="category-icon">🥤</span>
+              <h3>Напитки</h3>
+              <p>Холодные и горячие напитки</p>
+            </a>
+
+            <a href="#menu" class="category-card">
+              <span class="category-icon">🍳</span>
+              <h3>Завтраки</h3>
+              <p>Начните день вкусно</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- POPULAR MENU -->
+      <section class="menu section" id="menu">
+        <div class="container">
+          <!-- Шапка секции -->
+          <div class="section-header-top">
+            <span class="menu-subtitle">МЕНЮ КОФЕЙНИ</span>
+            <span class="price-note">
+              «Свежая выпечка и десерты обновляются каждый день — наличие
+              уточняйте у бариста»
+            </span>
+          </div>
+
+          <div class="section-heading">
+            <h2>Любимые позиции наших гостей</h2>
+          </div>
+
+          <!-- Фильтры / Тэги категорий -->
+          <div class="menu-categories">
+            <button class="category-btn" data-filter="all">Все</button>
+            <button class="category-btn active" data-filter="coffee">
+              Кофе
+            </button>
+            <button class="category-btn" data-filter="drinks">Напитки</button>
+            <button class="category-btn" data-filter="bakery">Выпечка</button>
+            <button class="category-btn" data-filter="desserts">
+              Пирожные
+            </button>
+            <button class="category-btn" data-filter="cakes">Торты</button>
+            <button class="category-btn" data-filter="pizza">Пицца</button>
+            <button class="category-btn" data-filter="burgers">Бургеры</button>
+            <button class="category-btn" data-filter="breakfast">
+              Завтраки
+            </button>
+          </div>
+
+          <!-- Основная сетка карточек (по 6 блюд на каждую категорию для проверки) -->
+          <div class="products-grid" id="menuGrid">
+            <!-- КАТЕГОРИЯ: КОФЕ (6 штук) -->
+            <article class="product-card" data-category="coffee">
+              <div class="product-image coffee-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Капучино</h3>
+                  <p>Эспрессо и нежная молочная пена</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">10 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="coffee">
+              <div class="product-image latte-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Латте</h3>
+                  <p>Мягкий кофе с тёплым молоком</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">11 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="coffee">
+              <div class="product-image americano-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Американо</h3>
+                  <p>Чистый вкус свежего эспрессо</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">12 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="coffee">
+              <div class="product-image coffee-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Эспрессо Доппио</h3>
+                  <p>Двойная порция бодрящего эспрессо</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">13 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="coffee">
+              <div class="product-image latte-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Флэт Уайт</h3>
+                  <p>Двойной эспрессо с бархатным молоком</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">14 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="coffee">
+              <div class="product-image americano-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Раф Кофе</h3>
+                  <p>Кофе со сливками и ванильным сахаром</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">15 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- КАТЕГОРИЯ: НАПИТКИ (6 штук) -->
+            <article class="product-card" data-category="drinks">
+              <div
+                class="product-image lemonade-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Ягодный лимонад</h3>
+                  <p>Освежающий напиток с лесной ягодой</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">16 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="drinks">
+              <div
+                class="product-image lemonade-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Манговый смузи</h3>
+                  <p>Густой полезный напиток из спелого манго</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">17 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="drinks">
+              <div
+                class="product-image lemonade-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Холодный чай Мохито</h3>
+                  <p>Мята, лайм, лед и черный чай</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">18 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="drinks">
+              <div
+                class="product-image lemonade-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Апельсиновый фреш</h3>
+                  <p>Свежевыжатый витаминный сок</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">19 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="drinks">
+              <div
+                class="product-image lemonade-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Молочный коктейль</h3>
+                  <p>Классический ванильный шейк с пенкой</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">20 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="drinks">
+              <div
+                class="product-image lemonade-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Травяной чай</h3>
+                  <p>Успокаивающий сбор с альпийскими травами</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">21 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- КАТЕГОРИЯ: ВЫПЕЧКА (6 штук) -->
+            <article class="product-card" data-category="bakery">
+              <div class="product-image croissant-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Круассан классический</h3>
+                  <p>Хрустящий, сливочный, свежий</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">22 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="bakery">
+              <div
+                class="product-image bun-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Булочка с корицей</h3>
+                  <p>С ароматной корицей и нежной глазурью</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">23 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="bakery">
+              <div class="product-image croissant-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Круассан с миндалем</h3>
+                  <p>С миндальным кремом и лепестками</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">24 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="bakery">
+              <div
+                class="product-image bun-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Датская булка с ягодами</h3>
+                  <p>Слоёное тесто со свежими лесными ягодами</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">25 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="bakery">
+              <div class="product-image croissant-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Самса с сыром</h3>
+                  <p>Слоёная выпечка с тягучим сыром сулугуни</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">26 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="bakery">
+              <div
+                class="product-image bun-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Плетенка с маком</h3>
+                  <p>Сладкая сдоба с большим количеством мака</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">27 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- КАТЕГОРИЯ: ПИРОЖНЫЕ (6 штук) -->
+            <article class="product-card" data-category="desserts">
+              <div class="product-image dessert-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Чизкейк Нью-Йорк</h3>
+                  <p>Классический сливочный десерт</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">28 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="desserts">
+              <div
+                class="product-image dessert-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Шоколадный тарт</h3>
+                  <p>Песочная корзинка с бельгийским шоколадом</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">29 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="desserts">
+              <div class="product-image dessert-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Тирамису</h3>
+                  <p>Итальянский десерт с маскарпоне и кофе</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">30 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="desserts">
+              <div
+                class="product-image dessert-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Медовое пирожное</h3>
+                  <p>Тонкие коржи с нежным сметанным кремом</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">31 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="desserts">
+              <div class="product-image dessert-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Эклер с заварным кремом</h3>
+                  <p>Хрустящее тесто с ванильным кремом</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">32 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="desserts">
+              <div
+                class="product-image dessert-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Макарон ассорти</h3>
+                  <p>Набор из трех французских пирожных</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">33 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- КАТЕГОРИЯ: ТОРТЫ (6 штук) -->
+            <article class="product-card" data-category="cakes">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Фисташковый торт</h3>
+                  <p>Нежный бисквит с фисташковым кремом</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">34 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="cakes">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Торт Наполеон</h3>
+                  <p>Хрустящие коржи с заварным кремом</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">35 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="cakes">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Шоколадный трюфель</h3>
+                  <p>Насыщенный шоколадный бисквит и ганаш</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">36 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="cakes">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Ягодный Красный Бархат</h3>
+                  <p>Яркие бисквиты с крем-чизом и вишней</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">37 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="cakes">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Торт Медовик классический</h3>
+                  <p>Ароматные медовые коржи</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">38 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="cakes">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Йогуртовый торт с персиком</h3>
+                  <p>Легкий муссовый десерт</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">39 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- КАТЕГОРИЯ: ПИЦЦА (6 штук) -->
+            <article class="product-card" data-category="pizza">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Пицца Маргарита</h3>
+                  <p>Томаты, моцарелла и свежий базилик</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">40 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="pizza">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Пицца Пепперони</h3>
+                  <p>Пикантная колбаски пепперони и сыр</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">41 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="pizza">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Пицца Четыре сыра</h3>
+                  <p>Моцарелла, дорблю, пармезан, эмменталь</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">42 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="pizza">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Пицца Куриная с грибами</h3>
+                  <p>Нежное филе цыпленка и шампиньоны</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">43 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="pizza">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Пицца Мясная</h3>
+                  <p>Бекон, пепперони, ветчина и охотничьи колбаски</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">44 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="pizza">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Пицца Барбекю</h3>
+                  <p>Курица гриль, соус барбекю и красный лук</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">45 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- КАТЕГОРИЯ: БУРГЕРЫ (6 штук) -->
+            <article class="product-card" data-category="burgers">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Классический бургер</h3>
+                  <p>Говяжья котлета, соус, салат и томат</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">46 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="burgers">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Чизбургер с двойным сыром</h3>
+                  <p>Двойной чеддер и сочная котлета из говядины</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">47 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="burgers">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Куриный бургер</h3>
+                  <p>Хрустящее куриное филе в панировке</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">48 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="burgers">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Острый бургер</h3>
+                  <p>С перцем халапеньо и фирменным соусом</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">49 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="burgers">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Фирменный Шахди бургер</h3>
+                  <p>Двойная котлета, бекон, луковые кольца</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">50 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="burgers">
+              <div
+                class="product-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Грибной бургер</h3>
+                  <p>С обжаренными шампиньонами и соусом</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">51 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- КАТЕГОРИЯ: ЗАВТРАКИ (6 штук) -->
+            <article class="product-card" data-category="breakfast">
+              <div class="product-image breakfast-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Тост с авокадо и пашот</h3>
+                  <p>Хрустящий тост, авокадо и яйцо пашот</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">52 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="breakfast">
+              <div
+                class="product-image breakfast-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Сырники со сметаной и ягодами</h3>
+                  <p>Нежные творожные сырники домашнего приготовления</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">53 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="breakfast">
+              <div class="product-image breakfast-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Английский завтрак</h3>
+                  <p>Яглазунья, сосиски, фасоль, бекон и тост</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">54 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="breakfast">
+              <div
+                class="product-image breakfast-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Овсяная каша с ягодами и орехами</h3>
+                  <p>Полезный завтрак на молоке или воде</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">55 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="breakfast">
+              <div class="product-image breakfast-image"></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Омлет с томатами и сыром</h3>
+                  <p>Пышный омлет из трех яиц с овощами</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">56 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="breakfast">
+              <div
+                class="product-image breakfast-image"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=85&quot;);
+                "
+              ></div>
+              <div class="product-info">
+                <div class="product-text">
+                  <h3>Панкейки с кленовым сиропом</h3>
+                  <p>Воздушные американские блинчики</p>
+                </div>
+                <div class="product-footer">
+                  <strong class="price">57 сомони</strong>
+                  <button class="add-btn" aria-label="Добавить">+</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Торты на заказ -->
+      <section class="custom-cakes section" id="cakes">
+        <div class="container">
+          <!-- Большой баннер -->
+          <div class="cake-banner">
+            <!-- Картинка через тег img (гарантированно отобразится) -->
+            <div class="cake-banner-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85"
+                alt="Торты на заказ"
+                class="cake-banner-img"
+              />
+            </div>
+
+            <div class="cake-banner-content">
+              <p class="eyebrow">СОЗДАДИМ ВАШ СЛАДКИЙ МОМЕНТ</p>
+              <h2>Торты на заказ</h2>
+              <p class="cake-banner-desc">
+                Для свадеб, дней рождения и других мероприятий. Выберите вкус,
+                размер и декор — остальное доверьте нам.
+              </p>
+
+              <div class="cake-tags">
+                <span>Свадьба</span>
+                <span>День рождения</span>
+                <span>Ваш праздник</span>
+              </div>
+
+              <!-- На баннере -->
+              <a href="#cakeModal" class="cake-btn" data-open-cake>
+                Заказать торт
+                <svg
+                  class="btn-arrow"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Маленькие карточки тортов под баннером -->
+          <div class="cakes-grid">
+            <article class="cake-card-small">
+              <div class="cake-info-small">
+                <h3>Медовик</h3>
+                <p>Целый торт · размер на выбор</p>
+              </div>
+              <strong class="price">150 сомони</strong>
+            </article>
+
+            <article class="cake-card-small">
+              <div class="cake-info-small">
+                <h3>Шоколадный торт</h3>
+                <p>Целый торт · размер на выбор</p>
+              </div>
+              <strong class="price">160 сомони</strong>
+            </article>
+
+            <article class="cake-card-small">
+              <div class="cake-info-small">
+                <h3>Фисташковый торт</h3>
+                <p>Целый торт · размер на выбор</p>
+              </div>
+              <strong class="price">170 сомони</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about section" id="about">
+        <div class="container about-grid">
+          <div class="about-image"></div>
+
+          <div class="about-content">
+            <p class="eyebrow">НЕМНОГО О НАС</p>
+
+            <h2>Место для хорошего кофе и хороших моментов</h2>
+
+            <p>
+              «Шахди Хуҷанд» — место, где можно спокойно начать утро,
+              встретиться с друзьями или просто насладиться чашкой любимого
+              кофе.
+            </p>
+
+            <p>
+              Мы создаём пространство, в котором вкусный кофе и уютная атмосфера
+              становятся частью каждого дня.
+            </p>
+
+            <div class="features">
+              <div class="feature">
+                <span>☕</span>
+                <div>
+                  <h3>Свежий кофе</h3>
+                  <p>Готовим с заботой</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <span>🍰</span>
+                <div>
+                  <h3>Свежие десерты</h3>
+                  <p>Для сладких моментов</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <span>✨</span>
+                <div>
+                  <h3>Уютная атмосфера</h3>
+                  <p>Место для отдыха</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <span>❤️</span>
+                <div>
+                  <h3>Забота о гостях</h3>
+                  <p>В каждом моменте</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ATMOSPHERE -->
+      <section class="gallery-light section" id="gallery">
+        <div class="container">
+          <!-- Заголовок -->
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">ГАЛЕРЕЯ</p>
+              <h2>Здесь хочется остаться</h2>
+            </div>
+            <p class="section-description">
+              Свет, аромат кофе и моменты, которые делают день теплее.
+            </p>
+          </div>
+
+          <!-- Сетка фотографий (как на 1-м фото) -->
+          <div class="gallery-light-grid">
+            <div class="gallery-item-l gallery-img-1"></div>
+            <div class="gallery-stack">
+              <div class="gallery-item-s gallery-img-2"></div>
+              <div class="gallery-item-s gallery-img-3"></div>
+            </div>
+            <div class="gallery-item-l gallery-img-4"></div>
+          </div>
+
+          <!-- Карточки преимуществ снизу -->
+          <div class="gallery-features-grid">
+            <div class="gallery-feature-card">
+              <span class="feature-icon">☕</span>
+              <h3>Свежий кофе</h3>
+              <p>Готовим каждую чашку с вниманием к вкусу.</p>
+            </div>
+
+            <div class="gallery-feature-card">
+              <span class="feature-icon">🍰</span>
+              <h3>Домашние десерты</h3>
+              <p>Нежные текстуры и любимые сочетания.</p>
+            </div>
+
+            <div class="gallery-feature-card">
+              <span class="feature-icon">🛋️</span>
+              <h3>Уютная атмосфера</h3>
+              <p>Для встреч, работы и минут для себя.</p>
+            </div>
+
+            <div class="gallery-feature-card">
+              <span class="feature-icon">❤️</span>
+              <h3>С заботой о гостях</h3>
+              <p>Тёплый приём и внимание к мелочам.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS (Кремовый фон) -->
+      <section class="reviews section" id="reviews">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="eyebrow">ОТЗЫВЫ</p>
+            <h2>Наши гости</h2>
+            <p class="section-description" style="margin: 15px auto 0">
+              То, что говорят о нас наши любимые посетители
+            </p>
+          </div>
+
+          <!-- Сюда JavaScript будет динамически выводить только одобренные админом отзывы -->
+          <div class="reviews-grid" id="reviewsGrid">
+            <!-- Если одобренных отзывов нет, можно вывести заглушку -->
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>«Прекрасная атмосфера и самый вкусный кофе в Худжанде!»</p>
+              <div class="review-author">
+                <strong>Музаффархон</strong>
+                <span>Гость кофейни</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-form-container">
+            <div class="form-header">
+              <p class="eyebrow">ВАШЕ МНЕНИЕ</p>
+              <h3>Оставьте отзыв</h3>
+              <p>Поделитесь впечатлением о нашей кофейне.</p>
+            </div>
+
+            <!-- Форма отправки отзыва пользователем -->
+            <form class="review-form" id="reviewForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  id="reviewerName"
+                  placeholder="Ваше имя"
+                  required
+                  class="form-input"
+                />
+              </div>
+              <div class="form-group">
+                <select
+                  name="rating"
+                  id="reviewerRating"
+                  required
+                  class="form-input select-input"
+                >
+                  <option value="" disabled selected>Оценка (от 1 до 5)</option>
+                  <option value="5">★★★★★ (Отлично)</option>
+                  <option value="4">★★★★☆ (Хорошо)</option>
+                  <option value="3">★★★☆☆ (Нормально)</option>
+                  <option value="2">★★☆☆☆ (Плохо)</option>
+                  <option value="1">★☆☆☆☆ (Ужасно)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  id="reviewerMessage"
+                  placeholder="Ваш отзыв..."
+                  rows="4"
+                  required
+                  class="form-input"
+                ></textarea>
+              </div>
+              <div
+                data-review-message
+                style="margin-bottom: 15px; font-size: 13px"
+              ></div>
+              <button type="submit" class="submit-review-btn">
+                Отправить отзыв
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSTAGRAM -->
+      <section class="instagram section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">СОЦИАЛЬНЫЕ СЕТИ</p>
+              <h2>Мы в Instagram</h2>
+            </div>
+
+            <a
+              href="https://www.instagram.com/shahdikhujand/"
+              class="text-link instagram-link"
+              target="_blank"
+              rel="noopener"
+            >
+              <span>Подписаться</span>
+              <svg
+                class="instagram-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+
+          <div class="instagram-grid">
+            <div class="instagram-photo insta-one"></div>
+            <div class="instagram-photo insta-two"></div>
+            <div class="instagram-photo insta-three"></div>
+            <div class="instagram-photo insta-four"></div>
+          </div>
+        </div>
+      </section>
+
+      <!--Филиалы-->
+      <section class="branches section" id="branches">
+        <div class="container">
+          <!-- Шапка секции -->
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">РЯДОМ С ВАМИ</p>
+              <h2>Наши филиалы</h2>
+            </div>
+            <p class="section-description">
+              Одна любовь к кофе — разные уютные места. Названия и контактные
+              данные филиалов уточняются.
+            </p>
+          </div>
+
+          <!-- Сетка филиалов (по 3 в ряд) -->
+          <div class="branches-grid">
+            <!-- Филиал 1 -->
+            <article class="branch-card">
+              <div class="branch-image branch-img-1"></div>
+              <div class="branch-info">
+                <h3>Филиал 01</h3>
+                <ul class="branch-details">
+                  <li>
+                    <span class="branch-icon">📍</span>
+                    <span>Худжанд · адрес уточняется</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">🕒</span>
+                    <span>С утра до 00:00</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">📞</span>
+                    <span>Телефон уточняется</span>
+                  </li>
+                </ul>
+                <a href="#map" class="branch-btn">Построить маршрут</a>
+              </div>
+            </article>
+
+            <!-- Филиал 2 -->
+            <article class="branch-card">
+              <div class="branch-image branch-img-2"></div>
+              <div class="branch-info">
+                <h3>Филиал 02</h3>
+                <ul class="branch-details">
+                  <li>
+                    <span class="branch-icon">📍</span>
+                    <span>Худжанд · адрес уточняется</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">🕒</span>
+                    <span>С утра до 00:00</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">📞</span>
+                    <span>Телефон уточняется</span>
+                  </li>
+                </ul>
+                <a href="#map" class="branch-btn">Построить маршрут</a>
+              </div>
+            </article>
+
+            <!-- Филиал 3 -->
+            <article class="branch-card">
+              <div class="branch-image branch-img-3"></div>
+              <div class="branch-info">
+                <h3>Филиал 03</h3>
+                <ul class="branch-details">
+                  <li>
+                    <span class="branch-icon">📍</span>
+                    <span>Худжанд · адрес уточняется</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">🕒</span>
+                    <span>С утра до 00:00</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">📞</span>
+                    <span>Телефон уточняется</span>
+                  </li>
+                </ul>
+                <a href="#map" class="branch-btn">Построить маршрут</a>
+              </div>
+            </article>
+
+            <!-- Филиал 4 -->
+            <article class="branch-card">
+              <div class="branch-image branch-img-1"></div>
+              <div class="branch-info">
+                <h3>Филиал 04</h3>
+                <ul class="branch-details">
+                  <li>
+                    <span class="branch-icon">📍</span>
+                    <span>Худжанд · адрес уточняется</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">🕒</span>
+                    <span>С утра до 00:00</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">📞</span>
+                    <span>Телефон уточняется</span>
+                  </li>
+                </ul>
+                <a href="#map" class="branch-btn">Построить маршрут</a>
+              </div>
+            </article>
+
+            <!-- Филиал 5 -->
+            <article class="branch-card">
+              <div class="branch-image branch-img-2"></div>
+              <div class="branch-info">
+                <h3>Филиал 05</h3>
+                <ul class="branch-details">
+                  <li>
+                    <span class="branch-icon">📍</span>
+                    <span>Худжанд · адрес уточняется</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">🕒</span>
+                    <span>С утра до 00:00</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">📞</span>
+                    <span>Телефон уточняется</span>
+                  </li>
+                </ul>
+                <a href="#map" class="branch-btn">Построить маршрут</a>
+              </div>
+            </article>
+
+            <!-- Филиал 6 -->
+            <article class="branch-card">
+              <div class="branch-image branch-img-3"></div>
+              <div class="branch-info">
+                <h3>Филиал 06</h3>
+                <ul class="branch-details">
+                  <li>
+                    <span class="branch-icon">📍</span>
+                    <span>Худжанд · адрес уточняется</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">🕒</span>
+                    <span>С утра до 00:00</span>
+                  </li>
+                  <li>
+                    <span class="branch-icon">📞</span>
+                    <span>Телефон уточняется</span>
+                  </li>
+                </ul>
+                <a href="#map" class="branch-btn">Построить маршрут</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="contact section" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-content">
+            <p class="eyebrow">КОНТАКТЫ</p>
+
+            <h2>Мы ждём вас</h2>
+
+            <p class="contact-description">
+              Загляните к нам на чашку кофе, вкусный десерт или приятную
+              встречу.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <span>📍</span>
+                <div>
+                  <small>АДРЕС</small>
+                  <p>Худжанд, Таджикистан</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span>📞</span>
+                <div>
+                  <small>ТЕЛЕФОН</small>
+                  <p>+992 XX XXX XX XX</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span>🕐</span>
+                <div>
+                  <small>ВРЕМЯ РАБОТЫ</small>
+                  <p>08:00 — 23:00</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span>📱</span>
+                <div>
+                  <small>INSTAGRAM</small>
+                  <p>@shahdi.khujand</p>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Shahdi+Khujand+Tajikistan"
+              target="_blank"
+              rel="noopener"
+              class="button button-dark"
+              data-route
+            >
+              Построить маршрут
+              <svg
+                class="btn-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a
+              href="#contactModal"
+              class="button button-outline contact-btn"
+              data-open-contact
+            >
+              Написать нам
+            </a>
+          </div>
+
+          <div class="map">
+            <div class="map-overlay">
+              <span>📍</span>
+              <strong>Шахди Хуҷанд</strong>
+              <p>Худжанд, Таджикистан</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="final-cta">
+        <div class="final-overlay"></div>
+
+        <div class="container final-content">
+          <p class="eyebrow">ШАХДИ ХУҶАНД</p>
+
+          <h2>Встретимся за чашкой кофе?</h2>
+
+          <a href="#menu" class="button button-light">
+            Посмотреть меню
+            <svg
+              class="btn-arrow"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-glow"></div>
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Логотип и Бренд -->
+          <div class="footer-brand">
+            <span class="column-title">КАФЕ</span>
+            <div class="brand-logo-card">
+              <div class="logo-frame">
+                <span class="coffee-icon">☕</span>
+                <h2>ШАХДИ</h2>
+                <h3>ХУҶАНД</h3>
+              </div>
+              <p>Кофе. Вкус. Атмосфера.</p>
+
+              <!-- Статус работы -->
+              <div class="footer-status">
+                <span class="status-dot"></span> Открыто сегодня до 00:00
+              </div>
+            </div>
+          </div>
+
+          <!-- Навигация -->
+          <div class="footer-column">
+            <h3>НАВИГАЦИЯ</h3>
+            <a href="#home">Главная</a>
+            <a href="#menu">Меню</a>
+            <a href="#about">О нас</a>
+            <a href="#gallery">Галерея</a>
+          </div>
+
+          <!-- Контакты -->
+          <div class="footer-column">
+            <h3>КОНТАКТЫ</h3>
+            <p><span class="icon">📍</span> Худжанд, Таджикистан</p>
+            <p><span class="icon">📞</span> +992 XX XXX XX XX</p>
+            <p><span class="icon">🕒</span> 08:00 — 00:00</p>
+          </div>
+
+          <!-- Мы онлайн -->
+          <div class="footer-column">
+            <h3>МЫ ОНЛАЙН</h3>
+            <a
+              href="https://www.instagram.com/shahdikhujand/"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="icon">📸</span> Instagram
+            </a>
+            <a href="#"><span class="icon">✈️</span> Telegram</a>
+            <a href="#"><span class="icon">💬</span> WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Декоративная лента с чашечками -->
+        <div class="footer-pattern-divider">
+          <span>☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕</span>
+        </div>
+
+        <!-- Копирайт -->
+        <div class="footer-bottom">
+          <p>© 2026 Шахди Хуҷанд. Все права защищены.</p>
+          <p>Сделано с <span class="heart">🤎</span></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- КОРЗИНА И ОФОРМЛЕНИЕ ЗАКАЗА -->
+    <div class="modal" id="orderModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-order></div>
+
+      <section
+        class="modal-card order-modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="orderModalTitle"
+      >
+        <button
+          class="modal-close"
+          type="button"
+          data-close-order
+          aria-label="Закрыть"
+        >
+          ×
+        </button>
+
+        <span class="eyebrow">ВАШ ВЫБОР</span>
+        <h2 id="orderModalTitle">Корзина</h2>
+
+        <div id="cartItems" class="cart-list">
+          <p class="empty-state">Корзина пока пуста.</p>
+        </div>
+
+        <div class="cart-total">
+          <span>Итого</span>
+          <strong id="cartTotal">0 сомони</strong>
+        </div>
+
+        <button type="button" class="cart-clear-btn" id="clearCartBtn">
+          Очистить корзину
+        </button>
+
+        <form class="backend-form" id="orderForm">
+          <h3>Оформление заказа</h3>
+
+          <label for="orderName">Ваше имя</label>
+          <input
+            id="orderName"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+          />
+
+          <label for="orderPhone">Номер телефона</label>
+          <input
+            id="orderPhone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            placeholder="+992..."
+            required
+          />
+
+          <label for="orderType">Способ получения</label>
+          <select id="orderType" name="type" required>
+            <option value="pickup">Самовывоз</option>
+            <option value="delivery">Доставка</option>
+          </select>
+
+          <label for="orderComment">Комментарий к заказу</label>
+          <textarea
+            id="orderComment"
+            name="comment"
+            rows="3"
+            placeholder="Адрес доставки или пожелания"
+          ></textarea>
+
+          <p
+            class="form-message"
+            data-order-message
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <button class="btn btn-primary" type="submit">
+            Подтвердить заказ
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <!-- БРОНИРОВАНИЕ СТОЛИКА -->
+    <div class="modal" id="bookingModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-booking></div>
+
+      <section
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="bookingModalTitle"
+      >
+        <button
+          class="modal-close"
+          type="button"
+          data-close-booking
+          aria-label="Закрыть"
+        >
+          ×
+        </button>
+
+        <span class="eyebrow">ВАШЕ ВРЕМЯ</span>
+        <h2 id="bookingModalTitle">Бронирование столика</h2>
+        <p>Заполните данные, и мы получим вашу заявку.</p>
+
+        <form class="backend-form" id="bookingForm">
+          <label for="bookingName">Ваше имя</label>
+          <input
+            id="bookingName"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+          />
+
+          <label for="bookingPhone">Номер телефона</label>
+          <input
+            id="bookingPhone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            placeholder="+992..."
+            required
+          />
+
+          <label for="bookingDate">Дата</label>
+          <input id="bookingDate" name="date" type="date" required />
+
+          <label for="bookingTime">Время</label>
+          <input
+            id="bookingTime"
+            name="time"
+            type="time"
+            min="08:00"
+            max="23:59"
+            required
+          />
+
+          <label for="bookingGuests">Количество гостей</label>
+          <input
+            id="bookingGuests"
+            name="guests"
+            type="number"
+            min="1"
+            max="20"
+            value="2"
+            required
+          />
+
+          <label for="bookingComment">Пожелания</label>
+          <textarea
+            id="bookingComment"
+            name="comment"
+            rows="3"
+            placeholder="Дополнительная информация"
+          ></textarea>
+
+          <p
+            class="form-message"
+            data-booking-message
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <button class="btn btn-primary" type="submit">
+            Отправить заявку
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <!-- ОБРАТНАЯ СВЯЗЬ -->
+    <div class="modal" id="contactModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-contact></div>
+
+      <section
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactModalTitle"
+      >
+        <button
+          class="modal-close"
+          type="button"
+          data-close-contact
+          aria-label="Закрыть"
+        >
+          ×
+        </button>
+
+        <span class="eyebrow">МЫ НА СВЯЗИ</span>
+        <h2 id="contactModalTitle">Напишите нам</h2>
+
+        <form class="backend-form" id="contactForm">
+          <label for="contactName">Ваше имя</label>
+          <input
+            id="contactName"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+          />
+
+          <label for="contactPhone">Телефон (необязательно)</label>
+          <input
+            id="contactPhone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            placeholder="+992..."
+          />
+
+          <label for="contactMessage">Сообщение</label>
+          <textarea
+            id="contactMessage"
+            name="message"
+            rows="4"
+            placeholder="Чем мы можем помочь?"
+            required
+          ></textarea>
+
+          <p
+            class="form-message"
+            data-contact-message
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <button class="btn btn-primary" type="submit">
+            Отправить сообщение
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО: ТОРТ НА ЗАКАЗ -->
+    <div class="modal" id="cakeModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-cake></div>
+
+      <section
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cakeModalTitle"
+      >
+        <button
+          class="modal-close"
+          type="button"
+          data-close-cake
+          aria-label="Закрыть"
+        >
+          ×
+        </button>
+
+        <span class="eyebrow">ИНДИВИДУАЛЬНЫЙ ЗАКАЗ</span>
+        <h2 id="cakeModalTitle">Заказать уникальный торт</h2>
+        <p style="font-size: 13px; color: #756b64; margin-bottom: 20px">
+          Заполните детали, и наш шеф-кондитер свяжется с вами для согласования
+          дизайна и цены.
+        </p>
+
+        <form class="backend-form" id="cakeOrderForm">
+          <label for="cakeName">Ваше имя</label>
+          <input
+            id="cakeName"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            placeholder="Как к вам обращаться?"
+          />
+
+          <label for="cakePhone">Номер телефона / WhatsApp</label>
+          <input
+            id="cakePhone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            placeholder="+992..."
+            required
+          />
+
+          <label for="cakeEvent">Повод / Праздник</label>
+          <select id="cakeEvent" name="event_type" required>
+            <option value="birthday">День рождения</option>
+            <option value="wedding">Свадьба / Хафта</option>
+            <option value="home_party">Домашняя вечеринка</option>
+            <option value="corporate">Корпоратив</option>
+            <option value="other">Другой праздник</option>
+          </select>
+
+          <label for="cakeFlavor">Предпочитаемый вкус / Начинка</label>
+          <select id="cakeFlavor" name="flavor">
+            <option value="medovik">Медовик классический</option>
+            <option value="chocolate">Шоколадный трюфель</option>
+            <option value="pistachio">Фисташковый с ягодами</option>
+            <option value="red_velvet">Красный бархат</option>
+            <option value="custom">Индивидуальная начинка (обсудим)</option>
+          </select>
+
+          <label for="cakeWeight">Примерный вес / Количество гостей</label>
+          <select id="cakeWeight" name="weight">
+            <option value="1.5-2kg">1.5 - 2 кг (на 6-10 человек)</option>
+            <option value="3-4kg">3 - 4 кг (на 12-18 человек)</option>
+            <option value="5+kg">5+ кг (большой праздник / свадьба)</option>
+          </select>
+
+          <label for="cakeDelivery">Способ получения</label>
+          <select id="cakeDelivery" name="delivery_type" required>
+            <option value="pickup">Самовывоз из кофейни</option>
+            <option value="delivery">Доставка курьером (Худжанд)</option>
+          </select>
+
+          <label for="cakeDate">К какому числу нужен торт?</label>
+          <input id="cakeDate" name="needed_date" type="date" required />
+
+          <label for="cakePhoto">
+            Ссылка на фото примерного дизайна (необязательно)</label
+          >
+          <input
+            id="cakePhoto"
+            name="photo_link"
+            type="url"
+            placeholder="https://instagram.com/... или Pinterest"
+          />
+
+          <label for="cakeComment">Пожелания по надписи и декору</label>
+          <textarea
+            id="cakeComment"
+            name="comment"
+            rows="3"
+            placeholder="Например: написать 'С днём рождения, Аниса!', сделать золотые шары..."
+          ></textarea>
+
+          <p
+            class="form-message"
+            data-cake-message
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <button class="btn btn-primary" type="submit">
+            Отправить заявку кондитеру
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <!-- Кнопка «Наверх» в самом низу HTML перед закрывающим тегом </body> -->
+    <a href="#" class="scroll-top-btn" id="scrollTopBtn">
+      <span>↑</span>
+    </a>
+    <script src="js/app.js"></script>
+  </body>
+</html>
